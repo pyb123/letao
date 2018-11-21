@@ -25,6 +25,12 @@ a:active{
     color: #a94442;
 }
 
+/* 让所有的表格的th，td内容居中显示 */
+.table.table-bordered th,
+.table.table-bordered td{
+    text-align: center;
+    vertical-align: middle;
+}
 
 /* -------------------------------左侧：右边栏---------------------------------------------- */
 

@@ -27,7 +27,7 @@
       <div class="nav">
         <ul>
           <li>
-            <a href="user.html"
+            <a href="user.html" class="current"
               ><i class="glyphicon glyphicon-user"></i>
               <span>用户管理</span></a
             >
@@ -37,13 +37,13 @@
               ><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a
             >
             <!-- 用于切换显示的二级列表 -->
-            <div class="child">
+            <div class="child" style="display: block">
               <a href="first.html">一级分类</a>
               <a href="second.html">一级分类</a>
             </div>
           </li>
           <li>
-            <a href="product.html"
+            <a href="product.html"  class="current"
               ><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a
             >
           </li>
@@ -70,16 +70,8 @@
         <!-- 连接导航 面包屑 -->
         <ol class="breadcrumb mt-20">
           <li><a href="index.html">管理系统</a></li>
-          <li><a href="active">首页</a></li>
+          <li><a href="active">商品管理</a></li>
         </ol>
-
-        <!-- 两个图表 -->
-        <div class="lt_content">
-          <div class="echarts_left pull-left"></div>
-          <div class="echarts_right pull-right"></div>
-        </div>
-      </div>
-    </div>
 
     <!-- 退出模态框 -->
     <!--
@@ -126,9 +118,7 @@
     <!-- 引入该包，需要前两个包都引入 -->
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
-    <script src="./lib/echarts/echarts.min.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/isLogin.js"></script>
-    <script src="./js/index.js"></script>
   </body>
 </html>
