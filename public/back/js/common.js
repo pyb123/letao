@@ -24,9 +24,47 @@ $(function() {
 
   $(document).ajaxStop(function() {
     // 模拟网络延迟（实际工作中不介意使用）
-    setTimeout(() => {
+    setTimeout(function() {
       // 关闭进度条
       NProgress.done();
     }, 500);
+  });
+
+  //   公用的功能：
+  // 1-左侧二级切换功能
+  $("#category").click(function() {
+    //   找下一个兄弟元素
+    $(this)
+      .next()
+      .stop()
+      .slideToggle();
+  });
+  // 2-左侧菜单功能
+  $(".lt_topbar .icon_left").click(function() {
+    //   让左侧的侧边栏切换
+    $(".lt_aside").toggleClass("hideMenu");
+    $(".lt_topbar").toggleClass("hideMenu");
+    $(".lt_main").toggleClass("hideMenu");
+  });
+  // 3-右侧退出功能
+  $(".lt_topbar .icon_right").click(function() {
+    // 显示退出模态框
+    $("#logoutModal").modal("show");
+  });
+
+  $("#logoutBtn").click(function() {
+    //   调用接口，让后台销毁当前用户的登录状态
+    $.ajax({
+      type: "get",
+      url: "/employee/employeeLogout",
+      dataType: "json",
+      success: function(info) {
+        console.log(info);
+        if (info.success) {
+          // 销毁登录状态成功，跳转到登录页
+          location.href = "login.html";
+        }
+      }
+    });
   });
 });
