@@ -69,7 +69,6 @@ $(function() {
           location.href = "index.html";
         }
         if (info.error === 1000) {
-          alert(info.message);
           // 用户名不存在
           // updateStatus('字段名称'，)
           $('#form').data('bootstrapValidator').updateStatus('username','INVALID','callback');
