@@ -47,15 +47,13 @@ $(function() {
     });
   }
   // 2-点击禁用启用按钮
-  $("tbody").on("click", "btn", function() {
+  $("tbody").on("click", ".btn", function() {
     // 批量注册事件
     // 显示模态框
     $("#userModal").modal("show");
 
     // 获取用户id
-    currentId = $(this)
-      .parent()
-      .data("id");
+    currentId = $(this).parent().data("id");
 
     // 获取修改的状态，根据按钮类名判断具体来传什么
     // 禁用按钮
