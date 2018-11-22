@@ -70,7 +70,8 @@ $(function() {
         }
         if (info.error === 1000) {
           // 用户名不存在
-          // updateStatus('字段名称'，)
+          // updateStatus('字段名称'，'状态','')
+          // . updateStatus(field, status, validatorName)
           $('#form').data('bootstrapValidator').updateStatus('username','INVALID','callback');
         }
         if (info.error === 1001) {

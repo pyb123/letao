@@ -130,7 +130,7 @@ a:active{
 }
 /* ------------------------------------------------ 右侧 ---------------------------------------------------------- */
 .lt_main{
-    background-color: pink;
+    /* background-color: pink; */
     padding-left: 180px;
     height: 2000px;
     padding-top: 50px;
