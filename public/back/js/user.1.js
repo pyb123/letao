@@ -1,16 +1,13 @@
 $(function() {
+  var currentPage = 1; //当前页
+  var pageSize = 5; //每一页的条数
+
+  var currentId; //当前用户的id
+
+  var isDelete; //修改的状态
 
   // 一进入页面
   render();
-
-  var currentPage = 1;  //当前页
-  var pageSize = 5;  //每一页的条数
-
-  var currentId;  //当前用户的id
-
-  var isDelete;   //修改的状态
-
-
 
   function render() {
     $.ajax({
@@ -51,40 +48,39 @@ $(function() {
     });
   }
 
+  // 2-点击禁用启用按钮
+  //   $('tbody').on('click','btn',function(){
+  //     // 批量注册事件
+  //     // 显示模态框
+  //     $('#userModal').modal('show');
 
-// 2-点击禁用启用按钮
-//   $('tbody').on('click','btn',function(){
-//     // 批量注册事件
-//     // 显示模态框
-//     $('#userModal').modal('show');
+  //     // 获取用户id
+  //     currentId= $(this).parent().data("id");
 
-//     // 获取用户id
-//     currentId= $(this).parent().data("id");
+  //     // 获取修改的状态，根据按钮类名判断具体来传什么
+  //     // 禁用按钮
+  //     isDelete = $(this).hasClass('btn-danger') ? 0 : 1;
+  //   });
 
-//     // 获取修改的状态，根据按钮类名判断具体来传什么
-//     // 禁用按钮
-//     isDelete = $(this).hasClass('btn-danger') ? 0 : 1;
-//   });
+  //   //点击模态框的确认按钮，完成用户的启用禁用
+  //   $('#submitBtn').click(function(){
+  //     $.ajax({
+  //         type: 'post',
+  //         url: '/user/updateUser',
+  //         data:{
+  //             id:  currentId,//用户id
+  //             isDelete: isDelete //将用户改成什么状态， 1启用 2禁用
+  //         },
+  //         dataType:'json',
+  //         success: function(info){
+  //             console.log(info);
+  //             if(info.success){
+  //                 // 关闭模态框，重新渲染
+  //                 $('#userModal').modal('hide');
 
-//   //点击模态框的确认按钮，完成用户的启用禁用
-//   $('#submitBtn').click(function(){
-//     $.ajax({
-//         type: 'post',
-//         url: '/user/updateUser',
-//         data:{
-//             id:  currentId,//用户id
-//             isDelete: isDelete //将用户改成什么状态， 1启用 2禁用
-//         },
-//         dataType:'json',
-//         success: function(info){
-//             console.log(info);
-//             if(info.success){
-//                 // 关闭模态框，重新渲染
-//                 $('#userModal').modal('hide');
-
-//                 render();
-//             }
-//         }
-//     })
-//   })
+  //                 render();
+  //             }
+  //         }
+  //     })
+  //   })
 });

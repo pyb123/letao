@@ -1,19 +1,20 @@
 $(function() {
-  render();
-
   var currentPage = 1; //当前页
   var pageSize = 5; //每一页的条数
 
   var currentId; //当前用户的id
 
   var isDelete; //修改的状态
+
+  render();
+
   function render() {
     $.ajax({
       type: "get",
       url: "/user/queryUser",
       data: {
-        page: 1,
-        pageSize: 5
+        page: currentPage,
+        pageSize: pageSize
       },
       dataType: "json",
       success: function(info) {

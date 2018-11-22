@@ -41,4 +41,30 @@ $(function() {
       }
     });
   }
+
+  //   2-点击添加按钮
+  $("#addBtn").click(function() {
+    $("#addModal").modal("show");
+  });
+
+  // 3-表单校验功能
+  $("#form").bootstrapValidator({
+    // 指定校验时的图标显示，默认是bootstrap风格
+    feedbackIcons: {
+      valid: "glyphicon glyphicon-ok",
+      invalid: "glyphicon glyphicon-remove",
+      validating: "glyphicon glyphicon-refresh"
+    },
+    // 配置字段
+    fields: {
+      categoryName: {
+        validators: {
+          // 配置非空
+          notEmpty: {
+            message: "请输入一级分类名称"
+          }
+        }
+      }
+    }
+  });
 });

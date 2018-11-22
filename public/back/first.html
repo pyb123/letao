@@ -74,7 +74,7 @@
           <li><a href="active">一级分类</a></li>
         </ol>
 
-        <button class="btn btn-default">添加分类</button>
+        <button class="btn btn-default" id="addBtn">添加分类</button>
 
         <table class="table table-bordered table-hover mt-20">
           <thead>
@@ -98,6 +98,40 @@
 
       </div>
 
+      <!-- 添加分类模态框 -->
+      <div class="modal fade" tabindex="-1" id="addModal">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <form id="form">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">
+                    <!-- &times; 表示X -->
+                    <span>&times;</span>
+                  </button>
+                  <h4 class="modal-title">添加分类</h4>
+                </div>
+                <div class="modal-body">
+                <!-- 每行外层要套一个form-group，如果不套，后面表单校验插件报错 -->
+                 <div class="form-group">
+                   <input type="text" class="form-control" placeholder="请输入一级分类名" name="categoryName">
+                 </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                  </button>
+                  <button type="submit" class="btn btn-primary" id="addBtn">
+                    添加
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+
+
     <!-- 退出模态框 -->
     <!--
       控制大小：
@@ -109,7 +143,6 @@
     <!-- 内层是模态框 -->
 
     <!-- data-dismiss="modal"  关闭当前模态框 -->
-
     <div class="modal fade" tabindex="-1" id="logoutModal">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
