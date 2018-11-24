@@ -138,4 +138,31 @@ $(function() {
       }
     }
   });
+
+  // 6-注册表单校验成功事件，阻止默认的提交
+  $('#form').on('success.form.bv',function(e){
+    e.preventDefault();
+
+    //ajax请求
+    $.ajax({
+      type: 'post',
+      url: '/category/addSecondCategory',
+      data: $('#form').serialize(),
+      dataType: 'json',
+      success: function(info){
+        // console.log(info);
+        if(info.success){
+          //关闭模态框
+          $('#addModal').modal('hide');
+          currentPage = 1;
+          render();
+
+          //重置表单内容和状态
+          $('#form').data('bootstrapValidator').resetForm(true);
+          $('#dropdownText').text('请选择一级分类');
+          $('#imgBox img').attr('src','./images/default.png');
+        }
+      }
+    })
+  })
 });
