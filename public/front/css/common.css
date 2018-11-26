@@ -157,6 +157,12 @@ img{
     padding: 10px;
 }
 
+.lt_product li img{
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+}
+
 .lt_product li .price{
     color: red;
 }
